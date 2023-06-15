@@ -1,0 +1,66 @@
+{
+    "Oid": "c873938a-7c34-43a8-9218-66f6b45e3066",
+    "Name": "Capturas de João",
+    "CompanyId": "94612025-d6f5-4951-91f0-118016d92944",
+    "Order": 25,
+    "UserIdentification": true,
+    "TermsOfUseConfiguration": {
+      "Oid": "463502f7-9d03-43ba-8500-63159f61060c",
+      "Title": "DETRAN PE",
+      "TermsOfUseText":
+          "<h2 style=\"margin: 0px 0px 10px; font-family: DauphinPlain; line-height: 24px; text-align: left;\">What is Lorem Ipsum?</h2><p style=\"margin: 0px 0px 15px; text-align: justify; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px;\"><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h2 style=\"margin: 0px 0px 10px; font-family: DauphinPlain; line-height: 24px; text-align: left;\">Where does it come from?</h2><p style=\"margin: 0px 0px 15px; text-align: justify; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px;\">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32.</p><p style=\"margin: 0px 0px 15px; text-align: justify; font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px;\">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from &quot;de Finibus Bonorum et Malorum&quot; by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>",
+      "DataConsentConfigurations": [
+        {
+          "Oid": "87935b99-d69d-48db-8ff2-927ee9a637da",
+          "Title": "Dados pessoais",
+          "DataConsentText": "Coletar dados pessoais",
+          "DataConsentItemConfigurations": [
+            {
+              "Oid": "7b0c0491-dcc4-4f08-9311-439fc52b1a15",
+              "Name": "CPF",
+              "Description": "Coletar CPF\n",
+              "DefaultAllowValue": false,
+              "Mandatory": false
+            },
+            {
+              "Oid": "dffefa34-8ab0-450b-9ab3-730d15f4282f",
+              "Name": "RG",
+              "Description": "Coletar RG",
+              "DefaultAllowValue": false,
+              "Mandatory": false
+            }
+          ]
+        }
+      ]
+    },
+    "ApplyScheduleCertificationIntegration": false,
+    "ScheduleConfigurationType": "Wizard",
+    "ScheduleCertificationItengrationType": "IntegrationCertification",
+    "CapturePlatform": "Lite",
+    "CaptureEntryConfigurations": [
+      {
+        "CaptureEntryType": "Face",
+        "ValidateBiopassIDFeatures": false,
+        "ValidateIcaoFeatures": false,
+        "Oid": "05f957ea-e6af-4cfc-9027-edb9a7398772",
+        "Mandatory": false,
+        "Connect": false,
+        "Caption": "B",
+        "Identifier": "face teste",
+        "Name": "A",
+        "CompanyId": "94612025-d6f5-4951-91f0-118016d92944",
+        "Order": 3
+      },
+      {
+        "CaptureEntryType": "IdentificationDocument",
+        "Oid": "2ca6497a-1806-4fa8-bc68-73592b0f933f",
+        "Mandatory": false,
+        "Connect": false,
+        "Caption": "b",
+        "Identifier": "Idete",
+        "Name": "a",
+        "CompanyId": "94612025-d6f5-4951-91f0-118016d92944",
+        "Order": 4
+      }
+    ]
+  }
