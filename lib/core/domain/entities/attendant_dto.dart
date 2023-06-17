@@ -1,6 +1,6 @@
-part of entities;
+import 'dart:convert';
 
-class Attendant extends Equatable {
+class AttendantDto {
   final String oid;
   final String name;
   final String userId;
@@ -8,7 +8,7 @@ class Attendant extends Equatable {
   final String profileImage;
   final String company;
 
-  const Attendant({
+  const AttendantDto({
     required this.oid,
     required this.name,
     required this.userId,
@@ -17,7 +17,7 @@ class Attendant extends Equatable {
     required this.company,
   });
 
-  factory Attendant.fromMap(Map<String, dynamic> data) => Attendant(
+  factory AttendantDto.fromMap(Map<String, dynamic> data) => AttendantDto(
         oid: data['Oid'] as String,
         name: data['Name'] as String,
         userId: data['UserId'] as String,
@@ -35,8 +35,15 @@ class Attendant extends Equatable {
         'Company': company,
       };
 
-  @override
-  List<Object?> get props {
-    return [oid];
+  /// `dart:convert`
+  ///
+  /// Parses the string and returns the resulting Json object as [Attendant].
+  factory AttendantDto.fromJson(String data) {
+    return AttendantDto.fromMap(json.decode(data) as Map<String, dynamic>);
   }
+
+  /// `dart:convert`
+  ///
+  /// Converts [Attendant] to a JSON string.
+  String toJson() => json.encode(toMap());
 }
