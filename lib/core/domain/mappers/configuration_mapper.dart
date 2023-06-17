@@ -1,3 +1,4 @@
+import 'package:desafio_pessoal/core/domain/entities/capture_entry_configuration_dto.dart';
 import 'package:desafio_pessoal/core/domain/entities/configurations_dto.dart';
 import 'package:desafio_pessoal/core/domain/entities/entities.dart';
 
@@ -17,6 +18,14 @@ class ConfigurationMapper {
       scheduleCertificationItengrationType:
           configDto.scheduleCertificationItengrationType,
       capturePlatform: configDto.capturePlatform,
+      captureEntryConfigurations: configDto.captureEntryConfigurations
+          .map((cc) => CaptureEntryConfiguration(
+              captureEntryType: cc.captureEntryType,
+              name: cc.name,
+              oid: cc.oid,
+              caption: cc.caption,
+              mandatory: cc.mandatory))
+          .toList(),
     );
   }
 
@@ -35,6 +44,14 @@ class ConfigurationMapper {
       scheduleCertificationItengrationType:
           config.scheduleCertificationItengrationType,
       capturePlatform: config.capturePlatform,
+      captureEntryConfigurations: config.captureEntryConfigurations
+          .map((cc) => CaptureEntryConfigurationDto(
+              captureEntryType: cc.captureEntryType,
+              name: cc.name,
+              oid: cc.oid,
+              caption: cc.caption,
+              mandatory: cc.mandatory))
+          .toList(),
     );
   }
 }

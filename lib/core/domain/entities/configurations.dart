@@ -14,7 +14,7 @@ class Configuration extends Equatable {
   final String capturePlatform;
   // final AssistanceQueue assistanceQueue;
   // final TermsOfUseConfiguration termsOfUseConfiguration;
-  // final List<CaptureEntryConfiguration> captureEntryConfigurations;
+  final List<CaptureEntryConfiguration> captureEntryConfigurations;
 
   const Configuration({
     required this.scheduleConfigurationType,
@@ -30,7 +30,7 @@ class Configuration extends Equatable {
     required this.capturePlatform,
     // required this.termsOfUseConfiguration,
     // required this.assistanceQueue,
-    // required this.captureEntryConfigurations,
+    required this.captureEntryConfigurations,
   });
 
   @override

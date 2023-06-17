@@ -1,4 +1,9 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
+import 'package:desafio_pessoal/core/domain/entities/capture_entry_configuration_dto.dart';
+import 'package:desafio_pessoal/core/domain/mappers/capture_entry_configuration_mapper.dart';
+
+import 'entities.dart';
 
 class ConfigurationDto {
   final String oid;
@@ -14,23 +19,21 @@ class ConfigurationDto {
   final String capturePlatform;
   // final AssistanceQueue assistanceQueue;
   // final TermsOfUseConfiguration termsOfUseConfiguration;
-  // final List<CaptureEntryConfiguration> captureEntryConfigurations;
+  final List<CaptureEntryConfigurationDto> captureEntryConfigurations;
 
   const ConfigurationDto({
-    required this.scheduleConfigurationType,
-    required this.toleranceConfiguration,
-    required this.messages,
     required this.oid,
     required this.name,
     required this.companyId,
-    required this.order,
+    required this.scheduleConfigurationType,
     required this.userIdentification,
+    required this.order,
     required this.applyScheduleCertificationIntegration,
     required this.scheduleCertificationItengrationType,
+    required this.toleranceConfiguration,
+    required this.messages,
     required this.capturePlatform,
-    // required this.termsOfUseConfiguration,
-    // required this.assistanceQueue,
-    // required this.captureEntryConfigurations,
+    required this.captureEntryConfigurations,
   });
 
   Map<String, dynamic> toMap() {
@@ -48,6 +51,8 @@ class ConfigurationDto {
       'ToleranceConfiguration': toleranceConfiguration,
       'Messages': messages,
       'CapturePlatform': capturePlatform,
+      'CaptureEntryConfigurations':
+          captureEntryConfigurations.map((e) => e.toJson())
     };
   }
 
@@ -66,6 +71,10 @@ class ConfigurationDto {
       toleranceConfiguration: map['ToleranceConfiguration'] as dynamic,
       messages: List<String>.from((map['Messages'] as List<String>)),
       capturePlatform: map['CapturePlatform'] as String,
+      captureEntryConfigurations: List<CaptureEntryConfigurationDto>.from(
+          (map['CaptureEntryConfigurations']
+                  as List<CaptureEntryConfigurationDto>)
+              .map((e) => e.toMap())),
     );
   }
 
