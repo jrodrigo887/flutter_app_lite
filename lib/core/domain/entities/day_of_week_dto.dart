@@ -1,19 +1,19 @@
-part of entities;
+import 'dart:convert';
 
-class DayOfWeek {
+class DayOfWeekDto {
   final String dayOfWeek;
   final String workTimeStart;
   final String workTimeEnd;
   final int queueSize;
 
-  const DayOfWeek({
+  const DayOfWeekDto({
     required this.dayOfWeek,
     required this.workTimeStart,
     required this.workTimeEnd,
     required this.queueSize,
   });
 
-  factory DayOfWeek.fromMap(Map<String, dynamic> data) => DayOfWeek(
+  factory DayOfWeekDto.fromMap(Map<String, dynamic> data) => DayOfWeekDto(
         dayOfWeek: data['DayOfWeek'] as String,
         workTimeStart: data['WorkTimeStart'] as String,
         workTimeEnd: data['WorkTimeEnd'] as String,
@@ -29,9 +29,9 @@ class DayOfWeek {
 
   /// `dart:convert`
   ///
-  /// Parses the string and returns the resulting Json object as [DayOfWeek].
-  factory DayOfWeek.fromJson(String data) {
-    return DayOfWeek.fromMap(json.decode(data) as Map<String, dynamic>);
+  /// Parses the string and returns the resulting Json object as [DayOfWeekDto].
+  factory DayOfWeekDto.fromJson(String data) {
+    return DayOfWeekDto.fromMap(json.decode(data) as Map<String, dynamic>);
   }
 
   /// `dart:convert`

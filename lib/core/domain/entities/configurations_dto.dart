@@ -1,9 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
-import 'package:desafio_pessoal/core/domain/entities/capture_entry_configuration_dto.dart';
-import 'package:desafio_pessoal/core/domain/mappers/capture_entry_configuration_mapper.dart';
 
-import 'entities.dart';
+import 'package:desafio_pessoal/core/domain/entities/capture_entry_configuration_dto.dart';
+
+import 'assistance_queue_dto.dart';
 
 class ConfigurationDto {
   final String oid;
@@ -17,7 +17,7 @@ class ConfigurationDto {
   final dynamic toleranceConfiguration;
   final List<String> messages;
   final String capturePlatform;
-  // final AssistanceQueue assistanceQueue;
+  final AssistanceQueueDto assistanceQueue;
   // final TermsOfUseConfiguration termsOfUseConfiguration;
   final List<CaptureEntryConfigurationDto> captureEntryConfigurations;
 
@@ -33,6 +33,7 @@ class ConfigurationDto {
     required this.toleranceConfiguration,
     required this.messages,
     required this.capturePlatform,
+    required this.assistanceQueue,
     required this.captureEntryConfigurations,
   });
 
@@ -75,6 +76,7 @@ class ConfigurationDto {
           (map['CaptureEntryConfigurations']
                   as List<CaptureEntryConfigurationDto>)
               .map((e) => e.toMap())),
+      assistanceQueue: AssistanceQueueDto.fromMap(map['assistanceQueue']),
     );
   }
 

@@ -12,7 +12,7 @@ class AttendantMapper {
         company: attDto.company);
   }
 
-  static AttendantDto toDto(AttendantDto attDto) {
+  static AttendantDto toDto(Attendant attDto) {
     return AttendantDto(
         oid: attDto.oid,
         name: attDto.name,

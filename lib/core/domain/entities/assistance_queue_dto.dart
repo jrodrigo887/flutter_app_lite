@@ -1,20 +1,21 @@
 import 'dart:convert';
 
 import 'package:desafio_pessoal/core/domain/entities/attendant_dto.dart';
+import 'package:desafio_pessoal/core/domain/entities/day_of_week_dto.dart';
 
 class AssistanceQueueDto {
   final String oid;
   final String name;
   final List<AttendantDto> attendants;
   final String attendantNames;
-  // final List<DayOfWeek>? dayOfWeeks;
+  final List<DayOfWeekDto> dayOfWeeks;
 
   const AssistanceQueueDto({
     required this.oid,
     required this.name,
     required this.attendants,
     required this.attendantNames,
-    // this.dayOfWeeks,
+    required this.dayOfWeeks,
   });
 
   factory AssistanceQueueDto.fromMap(Map<String, dynamic> data) {
@@ -25,9 +26,9 @@ class AssistanceQueueDto {
           .map((e) => AttendantDto.fromMap(e as Map<String, dynamic>))
           .toList(),
       attendantNames: data['AttendantNames'] as String,
-      // dayOfWeeks: (data['DayOfWeeks'] as List<dynamic>?)
-      // ?.map((e) => DayOfWeek.fromMap(e as Map<String, dynamic>))
-      // .toList(),
+      dayOfWeeks: (data['DayOfWeeks'] as List<DayOfWeekDto>)
+          .map((e) => DayOfWeekDto.fromMap(e as Map<String, dynamic>))
+          .toList(),
     );
   }
 
@@ -36,7 +37,7 @@ class AssistanceQueueDto {
         'Name': name,
         'Attendants': attendants.map((e) => e.toMap()).toList(),
         'AttendantNames': attendantNames,
-        // 'DayOfWeeks': dayOfWeeks?.map((e) => e.toMap()).toList(),
+        'DayOfWeeks': dayOfWeeks.map((e) => e.toMap()).toList(),
       };
 
   /// `dart:convert`
