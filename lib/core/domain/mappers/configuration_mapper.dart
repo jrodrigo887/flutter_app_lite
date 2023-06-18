@@ -1,32 +1,35 @@
 import 'package:desafio_pessoal/core/domain/entities/capture_entry_configuration_dto.dart';
 import 'package:desafio_pessoal/core/domain/entities/configurations_dto.dart';
 import 'package:desafio_pessoal/core/domain/entities/entities.dart';
+import 'package:desafio_pessoal/core/domain/mappers/assistance_queue_mapper.dart';
 
 class ConfigurationMapper {
   static Configuration fromDto(ConfigurationDto configDto) {
     return Configuration(
-      scheduleConfigurationType: configDto.scheduleCertificationItengrationType,
-      toleranceConfiguration: configDto.toleranceConfiguration,
-      messages: configDto.messages,
-      oid: configDto.oid,
-      name: configDto.name,
-      companyId: configDto.companyId,
-      order: configDto.order,
-      userIdentification: configDto.userIdentification,
-      applyScheduleCertificationIntegration:
-          configDto.applyScheduleCertificationIntegration,
-      scheduleCertificationItengrationType:
-          configDto.scheduleCertificationItengrationType,
-      capturePlatform: configDto.capturePlatform,
-      captureEntryConfigurations: configDto.captureEntryConfigurations
-          .map((cc) => CaptureEntryConfiguration(
-              captureEntryType: cc.captureEntryType,
-              name: cc.name,
-              oid: cc.oid,
-              caption: cc.caption,
-              mandatory: cc.mandatory))
-          .toList(),
-    );
+        scheduleConfigurationType:
+            configDto.scheduleCertificationItengrationType,
+        toleranceConfiguration: configDto.toleranceConfiguration,
+        messages: configDto.messages,
+        oid: configDto.oid,
+        name: configDto.name,
+        companyId: configDto.companyId,
+        order: configDto.order,
+        userIdentification: configDto.userIdentification,
+        applyScheduleCertificationIntegration:
+            configDto.applyScheduleCertificationIntegration,
+        scheduleCertificationItengrationType:
+            configDto.scheduleCertificationItengrationType,
+        capturePlatform: configDto.capturePlatform,
+        captureEntryConfigurations: configDto.captureEntryConfigurations
+            .map((cc) => CaptureEntryConfiguration(
+                captureEntryType: cc.captureEntryType,
+                name: cc.name,
+                oid: cc.oid,
+                caption: cc.caption,
+                mandatory: cc.mandatory))
+            .toList(),
+        assistanceQueue:
+            AssistanceQueueMapper.fromDto(configDto.assistanceQueue));
   }
 
   static ConfigurationDto toDto(Configuration config) {
@@ -52,6 +55,7 @@ class ConfigurationMapper {
               caption: cc.caption,
               mandatory: cc.mandatory))
           .toList(),
+      assistanceQueue: AssistanceQueueMapper.toDto(config.assistanceQueue),
     );
   }
 }

@@ -12,7 +12,7 @@ class Configuration extends Equatable {
   final dynamic toleranceConfiguration;
   final List<String> messages;
   final String capturePlatform;
-  // final AssistanceQueue assistanceQueue;
+  final AssistanceQueue assistanceQueue;
   // final TermsOfUseConfiguration termsOfUseConfiguration;
   final List<CaptureEntryConfiguration> captureEntryConfigurations;
 
@@ -29,7 +29,7 @@ class Configuration extends Equatable {
     required this.scheduleCertificationItengrationType,
     required this.capturePlatform,
     // required this.termsOfUseConfiguration,
-    // required this.assistanceQueue,
+    required this.assistanceQueue,
     required this.captureEntryConfigurations,
   });
 
