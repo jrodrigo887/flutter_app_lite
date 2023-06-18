@@ -13,7 +13,7 @@ class Configuration extends Equatable {
   final List<String> messages;
   final String capturePlatform;
   final AssistanceQueue assistanceQueue;
-  // final TermsOfUseConfiguration termsOfUseConfiguration;
+  final TermsOfUseConfiguration termsOfUseConfiguration;
   final List<CaptureEntryConfiguration> captureEntryConfigurations;
 
   const Configuration({
@@ -28,7 +28,7 @@ class Configuration extends Equatable {
     required this.applyScheduleCertificationIntegration,
     required this.scheduleCertificationItengrationType,
     required this.capturePlatform,
-    // required this.termsOfUseConfiguration,
+    required this.termsOfUseConfiguration,
     required this.assistanceQueue,
     required this.captureEntryConfigurations,
   });

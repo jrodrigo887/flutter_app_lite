@@ -2,6 +2,7 @@
 import 'dart:convert';
 
 import 'package:desafio_pessoal/core/domain/entities/capture_entry_configuration_dto.dart';
+import 'package:desafio_pessoal/core/domain/entities/terms_of_use_configuration_dto.dart';
 
 import 'assistance_queue_dto.dart';
 
@@ -18,24 +19,24 @@ class ConfigurationDto {
   final List<String> messages;
   final String capturePlatform;
   final AssistanceQueueDto assistanceQueue;
-  // final TermsOfUseConfiguration termsOfUseConfiguration;
+  final TermsOfUseConfigurationDto termsOfUseConfiguration;
   final List<CaptureEntryConfigurationDto> captureEntryConfigurations;
 
-  const ConfigurationDto({
-    required this.oid,
-    required this.name,
-    required this.companyId,
-    required this.scheduleConfigurationType,
-    required this.userIdentification,
-    required this.order,
-    required this.applyScheduleCertificationIntegration,
-    required this.scheduleCertificationItengrationType,
-    required this.toleranceConfiguration,
-    required this.messages,
-    required this.capturePlatform,
-    required this.assistanceQueue,
-    required this.captureEntryConfigurations,
-  });
+  const ConfigurationDto(
+      {required this.oid,
+      required this.name,
+      required this.companyId,
+      required this.scheduleConfigurationType,
+      required this.userIdentification,
+      required this.order,
+      required this.applyScheduleCertificationIntegration,
+      required this.scheduleCertificationItengrationType,
+      required this.toleranceConfiguration,
+      required this.messages,
+      required this.capturePlatform,
+      required this.assistanceQueue,
+      required this.captureEntryConfigurations,
+      required this.termsOfUseConfiguration});
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -53,31 +54,33 @@ class ConfigurationDto {
       'Messages': messages,
       'CapturePlatform': capturePlatform,
       'CaptureEntryConfigurations':
-          captureEntryConfigurations.map((e) => e.toJson())
+          captureEntryConfigurations.map((e) => e.toJson()),
+      'TermsOfUseConfiguration': termsOfUseConfiguration.toMap()
     };
   }
 
   factory ConfigurationDto.fromMap(Map<String, dynamic> map) {
     return ConfigurationDto(
-      oid: map['Oid'] as String,
-      name: map['Name'] as String,
-      companyId: map['CompanyId'] as String,
-      scheduleConfigurationType: map['ScheduleConfigurationType'] as String,
-      userIdentification: map['UserIdentification'] as bool,
-      order: map['Order'] as int,
-      applyScheduleCertificationIntegration:
-          map['ApplyScheduleCertificationIntegration'] as bool,
-      scheduleCertificationItengrationType:
-          map['ScheduleCertificationItengrationType'] as String,
-      toleranceConfiguration: map['ToleranceConfiguration'] as dynamic,
-      messages: List<String>.from((map['Messages'] as List<String>)),
-      capturePlatform: map['CapturePlatform'] as String,
-      captureEntryConfigurations: List<CaptureEntryConfigurationDto>.from(
-          (map['CaptureEntryConfigurations']
-                  as List<CaptureEntryConfigurationDto>)
-              .map((e) => e.toMap())),
-      assistanceQueue: AssistanceQueueDto.fromMap(map['assistanceQueue']),
-    );
+        oid: map['Oid'] as String,
+        name: map['Name'] as String,
+        companyId: map['CompanyId'] as String,
+        scheduleConfigurationType: map['ScheduleConfigurationType'] as String,
+        userIdentification: map['UserIdentification'] as bool,
+        order: map['Order'] as int,
+        applyScheduleCertificationIntegration:
+            map['ApplyScheduleCertificationIntegration'] as bool,
+        scheduleCertificationItengrationType:
+            map['ScheduleCertificationItengrationType'] as String,
+        toleranceConfiguration: map['ToleranceConfiguration'] as dynamic,
+        messages: List<String>.from((map['Messages'] as List<String>)),
+        capturePlatform: map['CapturePlatform'] as String,
+        captureEntryConfigurations: List<CaptureEntryConfigurationDto>.from(
+            (map['CaptureEntryConfigurations']
+                    as List<CaptureEntryConfigurationDto>)
+                .map((e) => e.toMap())),
+        assistanceQueue: AssistanceQueueDto.fromMap(map['AssistanceQueue']),
+        termsOfUseConfiguration:
+            TermsOfUseConfigurationDto.fromMap(map['TermsOfUseConfiguration']));
   }
 
   String toJson() => json.encode(toMap());
