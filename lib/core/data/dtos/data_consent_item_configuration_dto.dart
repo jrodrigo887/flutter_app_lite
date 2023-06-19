@@ -1,4 +1,4 @@
-import 'dart:convert';
+part of dtos;
 
 class DataConsentItemConfigurationDto {
   final String oid;

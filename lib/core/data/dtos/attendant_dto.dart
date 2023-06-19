@@ -1,4 +1,4 @@
-import 'dart:convert';
+part of dtos;
 
 class AttendantDto {
   final String oid;

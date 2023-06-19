@@ -1,7 +1,4 @@
-import 'package:desafio_pessoal/core/domain/entities/terms_of_use_configuration_dto.dart';
-import 'package:desafio_pessoal/core/domain/mappers/data_consent_configuration_mapper.dart';
-
-import '../entities/entities.dart';
+part of mappers;
 
 abstract class TermOfUseConfigurationMapper {
   static TermsOfUseConfiguration fromDto(TermsOfUseConfigurationDto dto) {

@@ -1,5 +1,4 @@
-import 'dart:convert';
-import 'package:desafio_pessoal/core/domain/entities/data_consent_item_configuration_dto.dart';
+part of dtos;
 
 class DataConsentConfigurationDto {
   final String oid;

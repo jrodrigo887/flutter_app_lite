@@ -1,7 +1,4 @@
-import 'package:desafio_pessoal/core/domain/entities/assistance_queue_dto.dart';
-import 'package:desafio_pessoal/core/domain/entities/entities.dart';
-import 'package:desafio_pessoal/core/domain/mappers/attendant_mapper.dart';
-import 'package:desafio_pessoal/core/domain/mappers/day_of_week_mapper.dart';
+part of mappers;
 
 abstract class AssistanceQueueMapper {
   static AssistanceQueue fromDto(AssistanceQueueDto dto) {

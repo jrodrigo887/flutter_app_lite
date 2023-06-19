@@ -1,6 +1,4 @@
-import 'package:desafio_pessoal/core/domain/entities/data_consent_configuration_dto.dart';
-import 'package:desafio_pessoal/core/domain/entities/entities.dart';
-import 'package:desafio_pessoal/core/domain/mappers/data_consent_item_configuration_mapper.dart';
+part of mappers;
 
 abstract class DataConsentConfigurationMapper {
   static DataConsentConfiguration fromDto(DataConsentConfigurationDto dto) {

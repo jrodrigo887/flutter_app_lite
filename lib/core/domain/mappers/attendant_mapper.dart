@@ -1,5 +1,4 @@
-import 'package:desafio_pessoal/core/domain/entities/attendant_dto.dart';
-import 'package:desafio_pessoal/core/domain/entities/entities.dart';
+part of mappers;
 
 class AttendantMapper {
   static Attendant fromDto(AttendantDto attDto) {

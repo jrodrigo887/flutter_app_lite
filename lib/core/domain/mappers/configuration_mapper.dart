@@ -1,8 +1,4 @@
-import 'package:desafio_pessoal/core/domain/entities/capture_entry_configuration_dto.dart';
-import 'package:desafio_pessoal/core/domain/entities/configurations_dto.dart';
-import 'package:desafio_pessoal/core/domain/entities/entities.dart';
-import 'package:desafio_pessoal/core/domain/mappers/assistance_queue_mapper.dart';
-import 'package:desafio_pessoal/core/domain/mappers/term_of_use_configuration_mapper.dart';
+part of mappers;
 
 class ConfigurationMapper {
   static Configuration fromDto(ConfigurationDto configDto) {

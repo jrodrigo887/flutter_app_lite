@@ -1,7 +1,4 @@
-import 'dart:convert';
-
-import 'package:desafio_pessoal/core/domain/entities/attendant_dto.dart';
-import 'package:desafio_pessoal/core/domain/entities/day_of_week_dto.dart';
+part of dtos;
 
 class AssistanceQueueDto {
   final String oid;

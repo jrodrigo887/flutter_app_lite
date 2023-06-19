@@ -1,4 +1,4 @@
-import 'dart:convert';
+part of dtos;
 
 class DayOfWeekDto {
   final String dayOfWeek;

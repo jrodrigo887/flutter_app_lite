@@ -1,5 +1,4 @@
-import 'package:desafio_pessoal/core/domain/entities/day_of_week_dto.dart';
-import 'package:desafio_pessoal/core/domain/entities/entities.dart';
+part of mappers;
 
 class DayOfWeekMapper {
   static DayOfWeek fromDto(DayOfWeekDto dayofDto) {

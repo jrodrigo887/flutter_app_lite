@@ -14,3 +14,4 @@ part 'field.dart';
 part 'form_field_dynamic.dart';
 part 'form_field_dynamic_control.dart';
 part 'terms_of_use_configuration.dart';
+part 'document_entry_configuration.dart';

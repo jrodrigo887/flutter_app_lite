@@ -1,10 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:convert';
-
-import 'package:desafio_pessoal/core/domain/entities/capture_entry_configuration_dto.dart';
-import 'package:desafio_pessoal/core/domain/entities/terms_of_use_configuration_dto.dart';
-
-import 'assistance_queue_dto.dart';
+part of dtos;
 
 class ConfigurationDto {
   final String oid;

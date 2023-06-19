@@ -1,5 +1,4 @@
-import 'package:desafio_pessoal/core/domain/entities/capture_entry_configuration_dto.dart';
-import 'package:desafio_pessoal/core/domain/entities/entities.dart';
+part of mappers;
 
 class CaptureEntryConfigurationMapper {
   static CaptureEntryConfiguration fromDto(
